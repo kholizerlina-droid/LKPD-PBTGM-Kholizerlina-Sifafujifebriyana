@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran Ekstrakurikuler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <nav class="navbar">
+    <div class="brand"><span class="brand-badge">E</span>Bakat.x-sata</div>
+    <div class="nav-stats">
+      <span id="totalCounter">0</span> total pendaftar
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="hero-tag">✨ Pendaftaran Dibuka</span>
+    <h1>Satu Klik Menuju<br>Ekstrakurikuler Impianmu</h1>
+    <p>Pilih dari 15 ekstrakurikuler unggulan sekolah — olahraga, seni, keagamaan, hingga akademik. Klik kartu, isi data, langsung terdaftar.</p>
+  </header>
+
+  <!-- ================= HALAMAN DAFTAR ================= -->
+  <main id="listPage" class="page active">
+
+    <div class="toolbar">
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari ekstrakurikuler...">
+      </div>
+      <div class="filter-chips" id="filterChips"></div>
+    </div>
+
+    <section class="ekskul-grid" id="ekskulGrid"></section>
+    <p class="empty-state" id="emptyState">Tidak ada ekstrakurikuler yang cocok dengan pencarianmu 🙁</p>
+  </main>
+
+  <!-- ================= HALAMAN FORM ================= -->
+  <main id="formPage" class="page">
+    <div class="form-wrapper">
+      <button type="button" id="backBtn" class="back-btn">← Kembali ke daftar</button>
+
+      <div class="form-card">
+        <div class="form-banner" id="formBanner">
+          <span class="form-banner-icon" id="formIcon">🏕️</span>
+          <div>
+            <span class="form-banner-tag" id="formCategory">Kategori</span>
+            <h2 id="selectedEkskulName">Pramuka</h2>
+          </div>
+        </div>
+
+        <form id="regForm" novalidate>
+          <input type="hidden" id="ekskul" name="ekskul">
+
+          <div class="field-row">
+            <div class="form-group">
+              <label for="nama">👤 Nama Lengkap</label>
+              <input type="text" id="nama" placeholder="Nama sesuai Kartu Pelajar">
+              <span class="error-msg" id="errNama"></span>
+            </div>
+            <div class="form-group">
+              <label for="kelas">🏫 Kelas</label>
+              <input type="text" id="kelas" placeholder="Contoh: XI RPL 1">
+              <span class="error-msg" id="errKelas"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">📧 Email</label>
+            <input type="email" id="email" placeholder="contoh@email.com">
+            <span class="error-msg" id="errEmail"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="hp">📱 Nomor HP / WhatsApp</label>
+            <input type="text" id="hp" placeholder="08xxxxxxxxxx" inputmode="numeric">
+            <span class="error-msg" id="errHp"></span>
+          </div>
+
+          <div class="field-row">
+            <div class="form-group">
+              <label for="password">🔒 Password</label>
+              <input type="password" id="password" placeholder="Minimal 8 karakter">
+              <div class="strength-bar"><span id="strengthFill"></span></div>
+              <span class="error-msg" id="errPassword"></span>
+            </div>
+            <div class="form-group">
+              <label for="konfirmasi">🔒 Konfirmasi</label>
+              <input type="password" id="konfirmasi" placeholder="Ulangi password">
+              <span class="error-msg" id="errKonfirmasi"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Daftar Sekarang <span class="arrow">→</span>
+          </button>
+        </form>
+
+        <div class="result-card" id="resultCard">
+          <div class="result-check">✓</div>
+          <h3>Yeay, Kamu Terdaftar!</h3>
+          <p class="result-sub">Data pendaftaranmu sudah tersimpan</p>
+          <ul class="result-detail" id="resultDetail"></ul>
+          <button type="button" class="submit-btn secondary" id="daftarLagiBtn">Daftar Ekskul Lain</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">@SMK NEGERI TENGARAN· Validasi Form Interaktif &amp; Responsive Layout</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
